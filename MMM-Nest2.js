@@ -7,7 +7,7 @@
  * MIT Licensed.
  */
 
-Module.register("MMM-Nest",{
+Module.register("MMM-Nest2",{
 
 	// Default module config.
 	defaults: {
@@ -24,7 +24,7 @@ Module.register("MMM-Nest",{
 	},
 	// Define required scripts.
 	getStyles: function() {
-		return ["MMM-Nest.css"];
+		return ["MMM-Nest2.css"];
 	},
 
 
@@ -51,7 +51,7 @@ Module.register("MMM-Nest",{
 		this.updateTimer = [];
 		this.hvacState = [];
 		this.hvacMode = [];
-
+		
 		this.protectName = [];
 		this.coState = [];
 		this.smokeState = [];
@@ -63,7 +63,7 @@ Module.register("MMM-Nest",{
 	// Override dom generator.
 	getDom: function() {
 	   var wrapper = document.createElement("div");
-
+		
 		if (this.debugVar !== "") {
 		   wrapper.innerHTML = this.debugVar;
                    wrapper.className = "dimmed light xsmall";
@@ -97,7 +97,7 @@ Module.register("MMM-Nest",{
                    humidityLabel.innerHTML = "Humidity";
                    headerRow.appendChild(humidityLabel);
 		   table.appendChild(headerRow);
-
+		   
 		   for (i = 0; i < this.numberTherms; i++) {
 			var row = document.createElement("tr");
 			var nameCell = document.createElement("td");
@@ -126,14 +126,14 @@ Module.register("MMM-Nest",{
                         humidityCell.innerHTML = this.humidity[i] + "%";
                         row.appendChild(humidityCell);
 			table.appendChild(row);
-		   }
+		   } 
 		   if (this.config.displayMode === "both" && this.numberProtects > 0) {
 			var breakLine = document.createElement("br");
 			table.appendChild(breakLine);
 		   }
 		   wrapper.appendChild(table);
 		 } if (this.config.displayMode !== "nest" && this.numberProtects > 0) {
-
+		 
 		   var table2 = document.createElement("table");
                    table2.classList.add("xsmall", "table");
                    var headerRow2 = document.createElement("tr");
@@ -191,10 +191,10 @@ Module.register("MMM-Nest",{
                         row2.appendChild(alarmCell);
                         table2.appendChild(row2);
 		   }
-
+		
 		   wrapper.appendChild(table2);
 
-		 }
+		 }		 
 		//Create a visual representation of the nest/protect
 		} else {
 		 if (this.config.displayMode !== "protect" ) {
@@ -274,7 +274,7 @@ Module.register("MMM-Nest",{
 
 		 }
 		}
-
+		
 		return wrapper;
 	},
 

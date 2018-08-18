@@ -1,0 +1,299 @@
+/*
+  Akkurat is a licensed font.  As such it is not included with this module.
+  You don;t need it -- this module will fall back to Roboto, but if you want
+  the display to look as Nest-like as possible, accquire the web-font Akkurat
+  and place in MagicMirror's /fonts/ folder, in a subfolder named "Akkurat".
+  Be sure to name your file akkurat-webfont.woff or akkurat-webfont.woff2
+  depending on what format you have.
+*/
+
+@font-face {
+  font-family: 'akkuratregular';
+  src: url('/fonts/Akkurat/akkurat-webfont.woff2') format('woff2'),
+       url('/fonts/Akkurat/akkurat-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.MMM-Nest2 {
+  margin-top: -211px;
+  margin-bottom: 65px;
+  margin-left: 220px;
+}
+
+.MMM-Nest2 .module-content {
+  font-family: "akkuratregular", "Roboto";
+}
+
+.MMM-Nest2 .heatingText {
+  font-size:medium;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  width: 0;
+}
+
+.MMM-Nest2 .coolingText {
+  font-size:medium;
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 0;
+}
+
+.MMM-Nest2 .humidityText {
+  position:absolute;
+  font-size:large;
+  top: 60%;
+  width: 100%; 
+}
+
+.MMM-Nest2 .nameText {
+ font-size:medium;
+ text-align:center;
+ width:33%;
+}
+
+.MMM-Nest2 .center {
+ text-align:center;
+}
+
+.MMM-Nest2 .heatingCell {
+ background:red;
+ background:linear-gradient(to right, #990000 , red, #990000);
+}
+
+.MMM-Nest2 .coolingCell {
+ background-color:blue;
+ background:linear-gradient(to right, #000099 , blue, #000099);
+}
+
+.MMM-Nest2 .fanIcon {
+ height:15px;
+ width:15px;
+ position:absolute;
+ top: 72%;
+ right: 42%;
+}
+
+.MMM-Nest2 .batteryIcon {
+ height:80px;
+ width:80px;
+ position:absolute;
+ top: 15%;
+ right: 20%;
+}
+
+.MMM-Nest2 .warningIcon {
+ height:17px;
+ width:20px;
+}
+
+.MMM-Nest2 .cautionIcon {
+ height:17px;
+ width:20px;
+}
+
+.MMM-Nest2 .nameText {
+  width: 120px;
+  font-size: 18px;
+}
+
+.MMM-Nest2 .humidityText {
+  top: 0;
+  display: block;
+  margin-top: 135px;
+  line-height: 1;
+}
+
+.MMM-Nest2 .humidityText:after {
+  content: "Inside Humidity";
+  text-transform: uppercase;
+  color: #999;
+  font-size: 70%;
+  display:block;
+  line-height: 1.5;
+}
+
+@keyframes MMM-Nest2-spin { 
+  from { 
+    transform: rotate(0deg);
+  } to { 
+    transform: rotate(360deg); 
+  }
+}
+
+.MMM-Nest2 .fanIcon {
+  filter: brightness(130%) saturate(0%);
+  animation-name: MMM-Nest-spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;  
+  top: 90px;
+  left: 53px;
+  right: initial;
+}
+
+.MMM-Nest2 .heating .fanIcon,
+.MMM-Nest2 .cooling .fanIcon,
+.MMM-Nest2 .coolingHC .fanIcon,
+.MMM-Nest2 .heatingHC .fanIcon {
+  filter: brightness(200%) saturate(0%);
+}
+
+.MMM-Nest2 .off,
+.MMM-Nest2 .heating,
+.MMM-Nest2 .cooling {  
+  width: 120px;
+  height: 120px;
+  border-radius: 70px;
+  font-size: 45px;
+  line-height: 120px;
+  border: none;
+  text-align: center;
+  position: relative;
+}
+
+.MMM-Nest2 .heatingHC,
+.MMM-Nest2 .coolingHC,
+.MMM-Nest2 .offHC {
+  width: 120px;
+  height: 120px;
+  border-radius: 70px;
+  font-size: 35px;
+  line-height: 120px;
+  border: none;
+  text-align: center;
+  position: relative;
+}
+
+.MMM-Nest2 .greenRing {
+ border: 7px solid #11d611;
+ border-radius: 50%;
+ width: 120px;
+ height: 120px;
+ box-shadow:
+         0 0 8px 0px #76e53e;
+ -webkit-animation: pulseGreen 2s linear 1s infinite;
+}
+
+.MMM-Nest2 .greenBoth {
+ position: relative;
+ top: -124px;
+ left: -4px;
+ border: 4px solid #11d611;
+ border-radius: 50%;
+ width: 120px;
+ height: 120px;
+ box-shadow:
+         0 0 8px 0px #76e53e;
+ -webkit-animation: pulseGreen 2s linear 1s infinite;
+}
+
+.MMM-Nest2 .alarmText {
+ display:block;
+ text-align: center;
+ line-height: 60px;
+ vertical-align: middle;
+}
+
+
+@-webkit-keyframes pulseGreen {
+  0% { box-shadow:0 0 8px 0px #76e53e; }
+  50% { box-shadow:0 0 16px 0px #76e53e;}
+  100% { box-shadow:0 0 8px 0px #76e53e; }
+}
+
+
+.MMM-Nest2 .yellowRing {
+ border: 7px solid #ffbe00;
+ border-radius: 50%;
+ width: 120px;
+ height: 120px;
+ box-shadow:
+	 0 0 8px 0px #ffd400;
+ -webkit-animation: pulseYellow 2s linear 1s infinite;
+}
+
+.MMM-Nest2 .yellowBoth {
+ position: relative;
+ top: -124px;
+ left: -4px;
+ border: 4px solid #ffbe00;
+ border-radius: 50%;
+ width: 120px;
+ height: 120px;
+ box-shadow:
+         0 0 8px 0px #ffd400;
+ -webkit-animation: pulseYellow 2s linear 1s infinite;
+}
+
+@-webkit-keyframes pulseYellow {
+  0% { box-shadow:0 0 8px 0px #ffd400; }
+  50% { box-shadow:0 0 16px 0px #ffd400;}
+  100% { box-shadow:0 0 8px 0px #ffd400; }
+}
+
+.MMM-Nest2 .redRing {
+ border: 7px solid #d92a00;
+ border-radius: 50%;
+ width: 120px;
+ height: 120px;
+ box-shadow:
+         0 0 8px 2px #f24c00;
+}
+
+.MMM-Nest2 .redBoth {
+ position: relative;
+ top: -124px;
+ left: -4px;
+ border: 4px solid #d92a00;
+ border-radius: 50%;
+ width: 120px;
+ height: 120px;
+ box-shadow:
+         0 0 8px 2px #f24c00;
+}
+
+@-webkit-keyframes pulseRed {
+  0% { box-shadow:0 0 8px 0px #f24c00; }
+  50% { box-shadow:0 0 16px 0px #f24c00;}
+  100% { box-shadow:0 0 8px 0px #f24c00; }
+}
+
+
+.MMM-Nest2 .off,
+.MMM-Nest2 .offHC {
+  background: rgb(74, 83, 91);
+  background: -moz-linear-gradient(90deg, rgb(74, 83, 91) 0%, rgb(40, 48, 55) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(74, 83, 91) 0%, rgb(40, 48, 55) 100%);
+  background: -o-linear-gradient(90deg, rgb(74, 83, 91) 0%, rgb(40, 48, 55) 100%);
+  background: -ms-linear-gradient(90deg, rgb(74, 83, 91) 0%, rgb(40, 48, 55) 100%);
+  background: linear-gradient(180deg, rgb(74, 83, 91) 0%, rgb(40, 48, 55) 100%);
+}
+
+.MMM-Nest2 .heating,
+.MMM-Nest2 .heatingHC {
+  background: rgb(238, 127, 0);
+  background: -moz-linear-gradient(90deg, rgb(238, 127, 0) 0%, rgb(229, 89, 40) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(238, 127, 0) 0%, rgb(229, 89, 40) 100%);
+  background: -o-linear-gradient(90deg, rgb(238, 127, 0) 0%, rgb(229, 89, 40) 100%);
+  background: -ms-linear-gradient(90deg, rgb(238, 127, 0) 0%, rgb(229, 89, 40) 100%);
+  background: linear-gradient(180deg, rgb(238, 127, 0) 0%, rgb(229, 89, 40) 100%);
+  color: #FFF;
+}
+
+.MMM-Nest2 .cooling,
+.MMM-Nest2 .coolingHC {
+  background: rgb(5, 95, 255);
+  background: -moz-linear-gradient(90deg, rgb(5, 95, 255) 0%, rgb(1, 57, 255) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(5, 95, 255) 0%, rgb(1, 57, 255) 100%);
+  background: -o-linear-gradient(90deg, rgb(5, 95, 255) 0%, rgb(1, 57, 255) 100%);
+  background: -ms-linear-gradient(90deg, rgb(5, 95, 255) 0%, rgb(1, 57, 255) 100%);
+  background: linear-gradient(180deg, rgb(5, 95, 255) 0%, rgb(1, 57, 255) 100%);
+  color: #FFF;
+}
+
+.MMM-Nest2 .blankDecimalSpacer {
+  opacity: 0;
+}
